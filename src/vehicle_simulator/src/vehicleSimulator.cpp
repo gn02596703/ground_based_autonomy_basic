@@ -320,8 +320,8 @@ int main(int argc, char** argv)
   odomTrans.child_frame_id_ = "sensor";
 
   ros::Publisher pubModelState = nh.advertise<gazebo_msgs::ModelState> ("/gazebo/set_model_state", 5);
-  gazebo_msgs::ModelState cameraState;
-  cameraState.model_name = "camera";
+  //gazebo_msgs::ModelState cameraState;
+  //cameraState.model_name = "camera";
   gazebo_msgs::ModelState lidarState;
   lidarState.model_name = "lidar";
 
@@ -390,11 +390,11 @@ int main(int argc, char** argv)
     tfBroadcaster.sendTransform(odomTrans);
 
     // publish 200Hz Gazebo model state messages (this is for Gazebo simulation)
-    cameraState.pose.orientation = geoQuat;
-    cameraState.pose.position.x = vehicleX;
-    cameraState.pose.position.y = vehicleY;
-    cameraState.pose.position.z = vehicleZ;
-    pubModelState.publish(cameraState);
+    //cameraState.pose.orientation = geoQuat;
+    //cameraState.pose.position.x = vehicleX;
+    //cameraState.pose.position.y = vehicleY;
+    //cameraState.pose.position.z = vehicleZ;
+    //pubModelState.publish(cameraState);
 
     geoQuat = tf::createQuaternionMsgFromRollPitchYaw(terrainRoll, terrainPitch, 0);
 
