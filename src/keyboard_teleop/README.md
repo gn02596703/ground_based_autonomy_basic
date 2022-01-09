@@ -14,7 +14,7 @@ launch vehicle simulator without joystick driver node
 
 then, launch the keyboard teleoperation node
 
-```keyboard_teleop keyboard_teleop.launch```
+```roslaunch keyboard_teleop keyboard_teleop.launch```
 
 Try out functions with following command
 
