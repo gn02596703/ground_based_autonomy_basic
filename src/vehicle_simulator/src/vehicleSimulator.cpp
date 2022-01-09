@@ -320,8 +320,8 @@ int main(int argc, char** argv)
   odomTrans.child_frame_id_ = "sensor";
 
   ros::Publisher pubModelState = nh.advertise<gazebo_msgs::ModelState> ("/gazebo/set_model_state", 5);
-  //gazebo_msgs::ModelState cameraState;
-  //cameraState.model_name = "camera";
+  gazebo_msgs::ModelState cameraState;
+  cameraState.model_name = "camera";
   gazebo_msgs::ModelState lidarState;
   lidarState.model_name = "lidar";
 

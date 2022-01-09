@@ -2,7 +2,7 @@
 
   <include file="$(find local_planner)/launch/local_planner.launch" />
 
-  <!--include file="$(find waypoint_example)/launch/waypoint_example.launch" /-->
+  <include file="$(find waypoint_example)/launch/waypoint_example.launch" />
 
   <include file="$(find vehicle_simulator)/launch/vehicle_simulator.launch" />
 

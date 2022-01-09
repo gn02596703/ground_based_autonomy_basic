@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="keyboard_teleop" type="keyboard_teleop.py" name="keyboard_teleop"  output="screen">
+  </node>
+</launch>

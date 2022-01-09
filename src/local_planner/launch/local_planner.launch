@@ -1,8 +1,8 @@
 <launch>
 
-  <include file="$(find ps3joy)/launch/ps3.launch" />
+  <!--<include file="$(find ps3joy)/launch/ps3.launch" />-->
 
-  <!--include file="$(find terrain_analysis)/launch/terrain_analysis.launch" /-->
+  <include file="$(find terrain_analysis)/launch/terrain_analysis.launch" />
 
   <arg name="sensorOffsetX" default="0"/>
   <arg name="sensorOffsetY" default="0"/>
