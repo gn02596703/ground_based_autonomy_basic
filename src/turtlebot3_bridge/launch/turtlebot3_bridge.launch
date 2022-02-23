@@ -4,6 +4,8 @@
   <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
   <arg name="move_forward_only" default="false"/>
+  
+  <arg name="odom_topic" default="odom" />
 
   <!-- Turtlebot3 -->
   <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
@@ -16,6 +18,15 @@
   <!-- AMCL -->
   <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
   
+  <!-- Global Planner -->
+  <!--<node pkg="global_planner" type="planner" name="planner">
+    <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find turtlebot3_navigation)/param/global_costmap_params.yaml" command="load" />
+  </node>-->
+  <node name="costmap_node" pkg="costmap_2d" type="costmap_2d_node" >
+    <rosparam file="$(find navigation)nav_config/params.yaml" />
+  </node>
+
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
