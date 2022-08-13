@@ -1,8 +1,10 @@
 <launch>
 
   <node pkg="waypoint_from_move_base_simple_goal" type="waypoint_from_MoveBaseSimpleGoal" name="waypoint_from_MoveBaseSimpleGoal" output="screen" required="true">
-    <param name="waypoint_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/waypoints.ply" />
-    <param name="boundary_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/boundary.ply" />
+    <!--<param name="waypoint_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/waypoints.ply" />-->
+    <!--<param name="boundary_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/boundary.ply" />-->
+    <param name="waypoint_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/waypoints_turtlebot3World.ply" />
+    <param name="boundary_file_dir" type="string" value="$(find waypoint_from_move_base_simple_goal)/data/boundary_turtlebot3World.ply" />
     <param name="waypointXYRadius" type="double" value="0.5" />
     <param name="waypointZBound" type="double" value="5.0" />
     <param name="waitTime" type="double" value="0" />

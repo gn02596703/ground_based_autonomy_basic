@@ -18,18 +18,14 @@
   <!-- AMCL -->
   <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
   
-  <!-- Global Planner -->
-  <!--<node pkg="global_planner" type="planner" name="planner">
-    <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find turtlebot3_navigation)/param/global_costmap_params.yaml" command="load" />
-  </node>-->
-  <node name="costmap_node" pkg="costmap_2d" type="costmap_2d_node" >
-    <rosparam file="$(find navigation)nav_config/params.yaml" />
-  </node>
+  <!-- Teleop -->
+  <include file="$(find turtlebot3_teleop)/launch/turtlebot3_teleop_key.launch"/>
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
   </group>
+
+  <node pkg="turtlebot3_bridge" name="turtlebot3_bridge" type="turtlebot3_bridge" args=""/>
 </launch>

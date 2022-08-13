@@ -390,11 +390,11 @@ int main(int argc, char** argv)
     tfBroadcaster.sendTransform(odomTrans);
 
     // publish 200Hz Gazebo model state messages (this is for Gazebo simulation)
-    //cameraState.pose.orientation = geoQuat;
-    //cameraState.pose.position.x = vehicleX;
-    //cameraState.pose.position.y = vehicleY;
-    //cameraState.pose.position.z = vehicleZ;
-    //pubModelState.publish(cameraState);
+    cameraState.pose.orientation = geoQuat;
+    cameraState.pose.position.x = vehicleX;
+    cameraState.pose.position.y = vehicleY;
+    cameraState.pose.position.z = vehicleZ;
+    pubModelState.publish(cameraState);
 
     geoQuat = tf::createQuaternionMsgFromRollPitchYaw(terrainRoll, terrainPitch, 0);
 

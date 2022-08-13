@@ -1,0 +1,12 @@
+<launch>
+
+  <remap from="/state_estimation" to="/odom"/>
+
+  <include file="$(find local_planner)/launch/local_planner.launch" />
+
+  <!--<include file="$(find waypoint_example)/launch/waypoint_example.launch" />-->
+  <include file="$(find waypoint_from_move_base_simple_goal)/launch/waypoint_from_MoveBaseSimpleGoal.launch" />
+  
+  <node pkg="tf" type="static_transform_publisher" name="VehicleToOdom_broadcaster" args="0 0 0 0 0 0 /base_link /vehicle 100" />
+
+</launch>
